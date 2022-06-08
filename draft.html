@@ -1,0 +1,201 @@
+<!-- <div class="grid-item featured-songs">
+    <img src="/images/pikachu.jpg" alt="" class="genre-image">
+    <h5 class="song-name">Jingchen</h5>
+    <!-- <span class="musician-song-genre">Country</span> -->
+    <!-- <div class="hotel-rating">
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+    </div> -->
+    <a href="#" class="btn btn-gradient">See more
+        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+    </a>
+</div>
+
+<div class="grid-item featured-songs">
+    <img src="/images/pikachu.jpg" alt="" class="genre-image">
+    <h5 class="song-name">Jingchen</h5>
+    <span class="musician-song-genre">Country</span>
+    <div class="hotel-rating">
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+        <i class="fas fa-star rating"></i>
+    </div>
+    <a href="#" class="btn btn-gradient">See more
+        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+    </a>
+
+
+</div> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dive</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/mainpage.css">
+</head>
+<body>
+    <!-- Header start -->
+    <header class="header-songpage">
+        <!--Control the overall width of the content-->
+        <div class="container">
+            <nav class="nav">
+                <a href="/templates/layouts/main.html" class="logo">
+                    <img src="{{ url_for('static', filename = 'logo.png') }}" alt="">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="/templates/pages/about.html" class="nav-link">About</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="/search" class="nav-link">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/songs" class="nav-link">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/musicians" class="nav-link">Musicians</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="/static/js/index.js"></script>
+
+    <!-- <section class="contact">
+        <div class="div container">
+            
+            <div class="<h5 class="section-head">
+                <span class="heading">Create your musician page</span>
+                <span class="sub-heading">Get in touch with us</span>
+            </h5>div contact-content">
+                <div class="div traveler-wrap">
+                    <img src="./images/traveler.png" alt="">
+                </div>
+                <form action="" class="form contact-form">
+                    <div class="input-group-wrap">
+                        <div class="input-group">
+                            <input type="text" class="input" placeholder="Name" required>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" class="input" placeholder="E-mail" required>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                        <div class="input-group">
+                            <input type="text" class="input" placeholder="Subject" required>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="input-group">
+                            <textarea class="input" cols="30" rows="8" placeholder="Message" required></textarea>
+                            <span class="bar"></span>
+                        </div>
+                    <button type="submit" class="btn form-btn btn-purple">Create
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+    
+    <!-- ------------------new_musicians page ------------------>
+    <section class="searching">
+        <div class="container">
+            <form action="" class="form contact-form">
+                <label for="adults" class="input-label">Create your own musician page</label>
+                <div class="input-group-wrap">
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="Name" required>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" class="input" placeholder="E-mail" required>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" class="input" placeholder="Website link" required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                    <div class="input-group">
+                        <input type="text" class="input" placeholder="Telephone" required>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <textarea class="input" cols="30" rows="8" placeholder="Self-Introduction" required></textarea>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <h5 class="upload">Choose your avator:</h5>
+                        <form action="" enctype='multipart/form-data' method='POST'>
+                            <input type="file" name="file">
+                            <input type="submit" value="upload">
+                        </form>
+                        <span class="bar"></span>
+                    </div>
+                <button type="submit" class="btn form-btn btn-purple">Create
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </button>
+            <!-- <form action="" class="book-form"> -->
+                <!-- <div class="input-group">
+                    <label for="destination" class="input-label">Genre</label>
+                    <input type="text" class="input" id="destination">
+                </div>
+                <div class="input-group">
+                    <label for="destination" class="input-label">Destination</label>
+                    <input type="text" class="input" id="destination">
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="check-in" class="input-label">Check in</label>
+                    <input type="date" class="input" id="check-in">
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="check-out" class="input-label">Check out</label>
+                    <input type="date" class="input" id="check-in">
+                </div> --> 
+                <!-- <div class="input-group">
+                    <label for="adults" class="input-label">Create your own musician page</label>
+                    <select class="options" id="adults">
+                        <option value="0">R&B</option>
+                        <option value="0">Hip Hop</option>
+                        <option value="0">Rock</option>
+                        <option value="0">Country</option>
+                        <option value="0">Jazz</option>
+                        <option value="0">Classic</option>
+                    </select>
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="children" class="input-label">Children</label>
+                    <select class="options" id="children">
+                        <option value="0">0</option>
+                        <option value="0">1</option>
+                        <option value="0">2</option>
+                        <option value="0">3</option>
+                        <option value="0">4</option>
+                        <option value="0">5</option>
+                    </select>
+                </div> -->
+                <!-- <button type="submit" class="btn form-btn btn-purple">Search
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </button> -->
+            <!-- </form> -->

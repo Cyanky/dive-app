@@ -1,0 +1,89 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+        
+
+        <section class="hotels">
+            <div class="container">
+                <h5 class="section-head">
+                    <span class="heading">Songs</span>
+                    <a href="/songs/create" class="btn form-btn btn-purple">Upload
+                        <span class="dots"><i class="fas fa-upload"></i></span>
+                    </a>
+                    
+                </h5>
+                
+                <!-- <audio class = "audio" src="/static/Music/ukulele.mp3" controls></audio> -->
+
+                <div class="grid">
+                    {% for song in songs %}
+                    <div class="grid-item featured-songs">
+                        <img src="{{ song.cover_link }}" alt="Song's cover" class="genre-image">
+                        <a href="{{ song.song_link }}" class="btn-playsong btn-gradient" onclick="playsong">{{ song.name }}
+                            <span class="dots"><i class="fas fa-play-circle"></i></span>
+                        </a> 
+               
+                        <span class="song-genre">{{ song.genre }}</span>
+                        <a href="/musicians/{{ song.musician_id }}" class="song-musician">{{ song.musician }}</a>
+                        <p>
+                            <a href="/songs/{{ song.id }}/edit">
+                                <span class="dots"><i class="fas fa-edit">*</i></span>
+                            </a>
+                            <!-- <a href="/songs/{{ song.id }}/delete">
+                                <span class="dots"><i class="fas fa-trash">*</i></span>
+                            </a> -->
+                        </p>
+                    </div>
+                    
+                    {% endfor %}
+
+                    <!-- <div class="grid-item featured-songs">
+                        <img src="/images/illusion.jpg" alt="" class="genre-image">
+                        <a href="#" class="btn-playsong btn-gradient">illusion
+                            <span class="dots"><i class="fas fa-play-circle" ></i></span>
+                        </a> 
+                        <span class="song-genre">Country</span>
+                        <a href="/templates/layouts/main.html" class="song-musician">Jingchen</a>
+                       
+                    </div>
+
+                    <div class="grid-item featured-songs">
+                        <img src="/images/cloud.jpg" alt="" class="genre-image">
+                        <a href="#" class="btn-playsong btn-gradient">Sunlit
+                            <span class="dots"><i class="fas fa-play-circle"></i></span>
+                        </a> 
+                        <span class="song-genre">Jazz</span>
+                        <a href="/templates/layouts/main.html" class="song-musician">Cyanky</a>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star-half rating"></i>
+                        </div>
+                        <a href="#" class="btn btn-gradient">Listen now
+                            <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+{% endblock %}
+    
+
+    <!-- <section class="footer">
+        <div class="contain">
+            <div class="footer-content">
+                <div class="footer-content-brand">
+                    <a href="index.html" class="logo">
+                        <img class="logo-image" src="./images/logo.png" alt="">
+                    </a>
+                    <div class="paragraph">
+                        djklfieor sjksdlf oeirujwlkjdlf oijxkclvjnsdfjeirusdlfjjls dlfiejjs ldkfl sahjkd djklfieor sjksdlf oeirujwlkjdlf oijxkclvjnsdfjeirusdlfjjls dlfiejjs ldkfl sahjkd 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section> -->

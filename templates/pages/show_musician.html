@@ -1,0 +1,108 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+    <section class="offer">
+        <div class="container">
+            
+            <div class="offer-content">
+                <!-- <h5 class="section-head">
+                    <span class="heading">Luxurious</span>
+                    <span class="sub-heading">Affordables rooms</span>
+                </h5> -->
+                <!-- <div class="discount">
+                    Cyanky
+                </div> -->
+                <p>
+                    <a href="/musicians/{{ musician.id }}/edit" class="btn form-btn btn-purple">Edit this profile
+                        <span class="dots"><i class="fas fa-edit"></i></span>
+                    </a>
+                    <!-- <a href="/musicians/{{ musician.id }}/delete" class="btn form-btn btn-purple">Delete this profile
+                        <span class="dots"><i class="fas fa-trash"></i></span>
+                    </a> -->
+                </p>
+                <h5 class="heading-show-musician">{{ musician.name }}</h5>
+                <!-- <h5 class="heading-show-musician-genre">R&B Jazz</h5> -->
+                <div>
+                    {% for genre in musician.genres %}
+                    <span class="heading-show-musician-genre">{{ genre }}</span>
+                    {% endfor %}
+                </div>
+                <!-- <div class="hotel-rating">
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star rating"></i>
+                    <i class="fas fa-star-half rating"></i>
+                </div> -->
+                <img class="round-image" src="{{ musician.avatar }}" alt="Musician Avatar">
+                <p class="paragraph">{{ musician.introduction }}</p>
+                <!-- <div class="social-media-wrap">
+                    <div class="social-media">
+                        <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div> -->
+                <p>
+                    <i class="fas fa-phone-alt">{{ musician.phone }}</i> 
+                </p>
+                <p>
+                    <i class="fas fa-link">{{ musician.website }}</i>
+                </p>
+                <p>
+                    <i class="fas fa-envelope">{{ musician.e_mail }}</i>
+                </p>
+                <!-- <a href="#" class="btn btn-gradient">Redeem offer
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms">
+        <div class="container">
+            <h5 class="section-head">
+                <span class="heading">Singles</span>
+                
+                
+
+                <!-- <span class="sub-heading">Affordables rooms</span> -->
+            </h5>
+            <div class="grid rooms-grid">
+                {% for song in musician.songs %}
+                <div class="grid-item featured-rooms">
+                    <div class="image-wrap">
+                        <img class="room-image" src="{{ song.song_cover }}" alt="">
+                        {% for genre in song.song_genre %}
+                        <h5 class="room-name">{{ genre }}</h5>
+                        {% endfor %}
+                    </div>
+                    <div class="room-info-wrap">
+                        
+                        <span class="room-price">{{ song.song_name }}</span>
+                        <p class="paragraph">{{ song.song_introduction }}</p>
+                        <a href="{{ song.song_link }}" class="btn rooms-btn"> Listen now &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <!-- <div class="grid-item featured-rooms">
+                    <div class="image-wrap">
+                        <img class="room-image" src="/images/cloud.jpg" alt="">
+                        <h5 class="room-name">Jazz</h5>
+                    </div>
+                    <div class="room-info-wrap">
+                        <span class="room-price">Sunlit</span>
+                        <p class="paragraph">
+                            sjkld eiork djfklgoerj skdlfow lkjoiu djkfleroi djfklsghjdk oeiruwjl djklfo sjkld eiork djfklgoerj skdlfow lkjoiu djkfleroi djfklsghjdk oeiruwjl djklfo sjkld eiork djfklgoerj skdlfow lkjoiu djkfleroi djfklsghjdk oeiruwjl djklfo
+                        </p>
+                        <a href="#" class="btn rooms-btn"> Listen now &rarr;</a>
+                    </div>
+                </div> -->
+                
+                
+            </div>
+        </div>
+    </section>
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+        <section class="searching">
+            <div class="container">
+                <div class="input-group">
+                    <label for="adults" class="input-label">Are you sure you want to delete musician "{{ musician.name }}" ?</label>
+                        
+                    
+                    <a href="/musicians" class="btn form-btn btn-purple">Cancel
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                    <!-- <a href="search/musician" class="btn form-btn btn-purple">Confirm
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a> -->
+                    <form action="/musicians/{{ musician.id }}/delete" method="DELETE">
+                        <button type="submit" class="btn form-btn btn-purple">Confirm
+                            <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </button>
+                    </form>
+                </div>
+               
+            </div>
+        </section>
+{% endblock %}

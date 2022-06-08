@@ -1,0 +1,38 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+    
+    <section class="hotels">
+        <div class="container">
+            <h5 class="section-head">
+                <span class="heading">Musicians</span>
+                <a href="/musicians/create" class="btn form-btn btn-purple">CREATE NEW
+                    <span class="dots"><i class="fas fa-upload"></i></span>
+                </a>
+                <!-- <span class="sub-heading">Talented musicians</span> -->
+            </h5>
+    
+            <div class="grid">
+                {% for musician in musicians %}
+                <div class="grid-item featured-songs">
+                    <img src="{{ musician.avatar_link }}" alt="" class="genre-image">
+                    <h5 class="song-name">{{ musician.name }}</h5>                    
+                    <!-- <span class="musician-song-genre">R&B Jazz</span> -->
+                    <!-- <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star-half rating"></i>
+                    </div> -->
+                    <a href="/musicians/{{ musician.id }}" class="btn btn-gradient">See more
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+    

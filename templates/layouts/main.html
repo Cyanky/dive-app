@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dive</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/mainpage.css">
+</head>
+<body>
+    <!-- Header start -->
+    <header class="header">
+        <!--Control the overall width of the content-->
+        <div class="container">
+            <nav class="nav">
+                <a href="/templates/layouts/main.html" class="logo">
+                    <img src="{{ url_for('static', filename = 'logo.png') }}" alt="">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="/templates/pages/about.html" class="nav-link">About</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="/search" class="nav-link">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/songs" class="nav-link">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/musicians" class="nav-link">Musicians</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-warning fade in">
+            <a class="close" data-dismiss="alert"></a>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+        <!-- <div class="hero">
+            <div class="container">
+                <div class="main-heading">
+                    <h1 class="title">Dive</h1>
+                    <h2 class="subtitle">Meet u in music</h2>
+                </div>
+                <a href="/search" class="btn btn-gradient">START NOW
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a>
+            </div>
+        </div> -->
+    </main>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

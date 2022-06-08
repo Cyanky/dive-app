@@ -1,0 +1,150 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+    <!-- <section class="contact">
+        <div class="div container">
+            
+            <div class="<h5 class="section-head">
+                <span class="heading">Create your musician page</span>
+                <span class="sub-heading">Get in touch with us</span>
+            </h5>div contact-content">
+                <div class="div traveler-wrap">
+                    <img src="./images/traveler.png" alt="">
+                </div>
+                <form action="" class="form contact-form">
+                    <div class="input-group-wrap">
+                        <div class="input-group">
+                            <input type="text" class="input" placeholder="Name" required>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" class="input" placeholder="E-mail" required>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                        <div class="input-group">
+                            <input type="text" class="input" placeholder="Subject" required>
+                            <span class="bar"></span>
+                        </div>
+                        <div class="input-group">
+                            <textarea class="input" cols="30" rows="8" placeholder="Message" required></textarea>
+                            <span class="bar"></span>
+                        </div>
+                    <button type="submit" class="btn form-btn btn-purple">Create
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+    
+    <section class="searching">
+        <div class="container">
+            <form method="post" class="form contact-form">
+                <label for="adults" class="input-label">Edit the song</label>
+                <div class="input-group-wrap">
+                    <div class="input-group">
+                        <!-- <input type="text" class="input" placeholder="Name" required> -->
+                        {{ form.name(class_= 'input', placeholder='Name', id='name', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div>
+                    
+                
+                    <div class="input-group">
+                        <!-- <input type="text" class="input" placeholder="Telephone" required> -->
+                        {{ form.cover_link(class_= 'input', placeholder='Cover_link: https/', id='cover_link', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <!-- <textarea class="input" cols="30" rows="8" placeholder="Self-Introduction" required></textarea> -->
+                        {{ form.introduction(class_= 'input', placeholder='Introduction', id='introdection', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <!-- <textarea class="input" cols="30" rows="8" placeholder="Self-Introduction" required></textarea> -->
+                        {{ form.song_link(class_= 'input', placeholder='Song_link: https//', id='song_link', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <!-- <textarea class="input" cols="30" rows="8" placeholder="Self-Introduction" required></textarea> -->
+                        {{ form.musician_id(class_= 'input', placeholder='Musician id: ', id='musician_id', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group input">Genre</div>
+                        <span class="bar"></span>
+                        <!-- <textarea class="input" cols="30" rows="8" placeholder="Self-Introduction" required></textarea> -->
+                        {{ form.genres(class_= 'input', placeholder='Genre', id='genre', autofocus = true) }}
+                        
+                    </div>
+                    <!-- <div class="input-group"></div>
+                        <h4 class="upload">Choose your Genres <small>(Ctrl+Click to select multiple)</small></h4>
+                        {{ form.genres(class_ = 'input-choice', placeholder='Genres, separated by
+                        commas', id='genres', autofocus = true) }}
+                        <span class="bar"></span>
+                    </div> -->
+                    <!-- <div class="input-group">
+                        <h4 class="upload">Choose your avator:</h4>
+                        <form action="" enctype='multipart/form-data' method='POST'>
+                            <input type="file" name="file">
+                            <input type="submit" value="upload">
+                        </form>
+                        <span class="bar"></span>
+                    </div> -->
+                    
+                    <button type="submit" class="btn form-btn btn-purple">Edit
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </button>
+                    <!-- <input
+                        type="submit"
+                        value="Create Artist"
+                        class="btn btn-primary btn-lg btn-block"
+                    /> -->
+                </div>
+            <!-- <form action="" class="book-form"> -->
+                <!-- <div class="input-group">
+                    <label for="destination" class="input-label">Genre</label>
+                    <input type="text" class="input" id="destination">
+                </div>
+                <div class="input-group">
+                    <label for="destination" class="input-label">Destination</label>
+                    <input type="text" class="input" id="destination">
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="check-in" class="input-label">Check in</label>
+                    <input type="date" class="input" id="check-in">
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="check-out" class="input-label">Check out</label>
+                    <input type="date" class="input" id="check-in">
+                </div> --> 
+                <!-- <div class="input-group">
+                    <label for="adults" class="input-label">Create your own musician page</label>
+                    <select class="options" id="adults">
+                        <option value="0">R&B</option>
+                        <option value="0">Hip Hop</option>
+                        <option value="0">Rock</option>
+                        <option value="0">Country</option>
+                        <option value="0">Jazz</option>
+                        <option value="0">Classic</option>
+                    </select>
+                </div> -->
+                <!-- <div class="input-group">
+                    <label for="children" class="input-label">Children</label>
+                    <select class="options" id="children">
+                        <option value="0">0</option>
+                        <option value="0">1</option>
+                        <option value="0">2</option>
+                        <option value="0">3</option>
+                        <option value="0">4</option>
+                        <option value="0">5</option>
+                    </select>
+                </div> -->
+                <!-- <button type="submit" class="btn form-btn btn-purple">Search
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </button> -->
+            </form>
+        </div>
+    </section>
+    {% endblock %}
