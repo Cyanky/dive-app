@@ -34,6 +34,10 @@ import base64
 
 from auth import AuthError, requires_auth, get_token_auth_header
 
+# from flask_migrate import Migrate
+# migrate = Migrate()
+# migrate.init_app(application, db)
+
 
 # https://dev-dc7i9qu0.us.auth0.com/authorize?audience=divemusic&response_type=token&client_id=6Tspmj0FPydwzQoAnI66ZdioqSgOoJcF&redirect_uri=https://127.0.0.1:5000/musicians/create
 
