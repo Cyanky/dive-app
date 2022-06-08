@@ -4,8 +4,7 @@ import os
 from unittest import result
 from urllib import response
 from flask_cors import CORS
-from models import setup_db
-from flask_cors import CORS
+# from models import setup_db
 
 import urllib.request
 from werkzeug.utils import secure_filename
@@ -58,19 +57,19 @@ import base64
 #         uniqueNum = str(nowTime) + str(randomNum)
 #         return uniqueNum
 
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:abc@localhost:5432/diveapp'
-# app.config.from_object('config')
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qogtzxosoespfk:9079fe9b47300f5c5e7dad7b644b44cd96bbe52783971ecd53525b10806eac35@ec2-52-72-99-110.compute-1.amazonaws.com:5432/d5pcputtel7bod'
+app.config.from_object('config')
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-# db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
-def create_app(test_config=None):
+# def create_app(test_config=None):
 
-    app = Flask(__name__)
-    setup_db(app)
-    CORS(app)
+#     app = Flask(__name__)
+#     setup_db(app)
+#     CORS(app)
 
 # ------------------------------------------------------------------------------#
 # Data Model
@@ -79,33 +78,33 @@ def create_app(test_config=None):
 
 
 
-# class Musician(db.Model):
-#     __tablename__ = 'musician'
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(120), nullable=False)
-#     e_mail = db.Column(db.String(120))
-#     phone = db.Column(db.String(120))
-#     website = db.Column(db.String(500))
-#     introduction = db.Column(db.String(120))
-#     avatar_link = db.Column(db.String())
-#     genres = db.Column(db.String(120))
-#     songs = db.relationship('Song', backref='musicians', lazy=True, cascade="save-update, merge, delete")
+class Musician(db.Model):
+    __tablename__ = 'musician'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    e_mail = db.Column(db.String(120))
+    phone = db.Column(db.String(120))
+    website = db.Column(db.String(500))
+    introduction = db.Column(db.String(120))
+    avatar_link = db.Column(db.String())
+    genres = db.Column(db.String(120))
+    songs = db.relationship('Song', backref='musicians', lazy=True, cascade="save-update, merge, delete")
     
 
-#     def add(self):
-#         db.session.add(self)
-#         db.session.commit()
+    def add(self):
+        db.session.add(self)
+        db.session.commit()
 
-#     def update(self):
-#         db.session.update(self)
-#         db.session.commit()
+    def update(self):
+        db.session.update(self)
+        db.session.commit()
 
-#     def delete(self):
-#         db.session.delete(self)
-#         db.session.commit()
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
-#     def __repr__(self):
-#         return f"<Musician {self.name}>"
+    def __repr__(self):
+        return f"<Musician {self.name}>"
 
 # class Genre(db.Model):
 #     __tablename__ = 'genre'
@@ -129,31 +128,31 @@ def create_app(test_config=None):
 #         return f"<Genre {self.name}>"
 
 
-# class Song(db.Model):
-#     __tablename__ = 'song'
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(120), nullable=False)
-#     introduction = db.Column(db.String(120))
-#     cover_link = db.Column(db.String())
-#     song_link = db.Column(db.String(500))
-#     genre = db.Column(db.String(120))
-#     musician_id = db.Column(db.Integer, db.ForeignKey('musician.id'))
+class Song(db.Model):
+    __tablename__ = 'song'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    introduction = db.Column(db.String(120))
+    cover_link = db.Column(db.String())
+    song_link = db.Column(db.String(500))
+    genre = db.Column(db.String(120))
+    musician_id = db.Column(db.Integer, db.ForeignKey('musician.id'))
 
 
-#     def add(self):
-#         db.session.add(self)
-#         db.session.commit()
+    def add(self):
+        db.session.add(self)
+        db.session.commit()
 
-#     def update(self):
-#         db.session.update(self)
-#         db.session.commit()
+    def update(self):
+        db.session.update(self)
+        db.session.commit()
 
-#     def delete(self):
-#         db.session.delete(self)
-#         db.session.commit()
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
-#     def __repr__(self):
-#         return f"<Song {self.name}>"
+    def __repr__(self):
+        return f"<Song {self.name}>"
 
 # db.create_all()
 
@@ -658,9 +657,9 @@ def create_app(test_config=None):
     # ----------------------------------------------------------------------------#
     # Launch.
     # ----------------------------------------------------------------------------#
-    return app
+    # return app
 
-app = create_app()
+# app = create_app()
 # Default port:
 if __name__ == "__main__":
     app.run()
