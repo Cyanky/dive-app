@@ -14,12 +14,12 @@
                 <div class="grid">
                     {% for result in results %}
                     <div class="grid-item featured-songs">
-                        <img src="{{ results.cover_link }}" alt="" class="genre-image">
-                        <a href="{{ results.song_link }}" class="btn-playsong btn-gradient">{{ result.name }}
+                        <img src="{{ result.cover_link }}" alt="" class="genre-image">
+                        <a href="{{ result.song_link }}" class="btn-playsong btn-gradient">{{ result.name }}
                             <span class="dots"><i class="fas fa-play-circle"></i></span>
                         </a> 
                
-                        <a href="/musicians/{{ results.musician_id }}" class="song-musician">{{ result.musician }}</a>
+                        <a href="/musicians/{{ result.musician_id }}" class="song-musician">{{ result.musician }}</a>
                     
                     </div>
                     {% endfor %}
