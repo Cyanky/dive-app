@@ -249,7 +249,7 @@ def show_musician(musician_id):
 # ------------------------------------------------------------
 
 @app.route('/musicians/create', methods=['GET'])
-@requires_auth('get:musician-create-page')
+# @requires_auth('get:musician-create-page')
 def create_musician_form(payload):
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
