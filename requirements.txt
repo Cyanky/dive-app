@@ -16,9 +16,17 @@ MarkupSafe==2.1.1
 psycopg2-binary==2.9.3
 pyasn1==0.4.8
 python-jose==3.3.0
+
 rsa==4.8
 six==1.16.0
 SQLAlchemy==1.4.37
 tornado==5.0.2
 Werkzeug==2.1.2
 WTForms==3.0.1
+
+
+
+
+flask
+python-dotenv
+six

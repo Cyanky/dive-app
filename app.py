@@ -6,6 +6,9 @@ from urllib import response
 from flask_cors import CORS
 # from models import setup_db
 
+
+
+
 import urllib.request
 from werkzeug.utils import secure_filename
 from asyncio.format_helpers import _get_function_source
@@ -30,6 +33,7 @@ import random
 from werkzeug.utils import secure_filename
 import time
 import base64
+
 
 from auth import AuthError, requires_auth
 
@@ -65,7 +69,13 @@ app.config.from_object('config')
 # app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+CORS(app)
 
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization, true')
+    response.headers.add('Access-COntrol-Allow-Methods', 'GET, POST')
+    return response
 # def create_app(test_config=None):
 
 #     app = Flask(__name__)
