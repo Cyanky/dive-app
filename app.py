@@ -31,7 +31,7 @@ from werkzeug.utils import secure_filename
 import time
 import base64
 
-# from auth import AuthError, requires_auth, get_token_auth_header
+from auth import AuthError, requires_auth, get_token_auth_header
 
 # from flask_migrate import Migrate
 # migrate = Migrate()
@@ -243,7 +243,7 @@ def create_musician_form():
     return render_template("forms/new_musician.html", form=form)
 
 @app.route("/musicians/create", methods=['POST'])
-# @requires_auth('post:musician')
+@requires_auth('post:musician')
 def create_musician_submission():
     genresList = request.form.getlist("genres")
     musicianData = MusicianForm(request.form)
@@ -349,7 +349,7 @@ def create_song_form():
     return render_template("forms/new_song.html", form=form)
 
 @app.route("/songs/create", methods=['POST'])
-# @requires_auth('post:song')
+@requires_auth('post:song')
 def create_song_submission():
     genresList = request.form.getlist("genres")
     songData = SongForm(request.form)
@@ -472,7 +472,7 @@ def edit_musician(musician_id):
 
 
 @app.route("/musicians/<int:musician_id>/edit", methods=["POST"])
-# @requires_auth('post:edit-musician')
+@requires_auth('post:edit-musician')
 def edit_musician_submission(musician_id):
     # Done: take values from the form submitted, and update existing
     # artist record with ID <artist_id> using the new attributes
@@ -524,7 +524,7 @@ def edit_song(song_id):
 
 
 @app.route("/songs/<int:song_id>/edit", methods=["POST"])
-# @requires_auth('post:edit-song')
+@requires_auth('post:edit-song')
 def edit_song_submission(song_id):
     # Done: take values from the form submitted, and update existing
     # artist record with ID <artist_id> using the new attributes
