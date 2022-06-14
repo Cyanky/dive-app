@@ -239,13 +239,13 @@ def show_musician(musician_id):
 # ------------------------------------------------------------
 
 @app.route('/musicians/create', methods=['GET'])
-# @requires_auth('get:musician-create-page')
+@requires_auth('get:musician-create-page')
 def create_musician_form():
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
 
 @app.route("/musicians/create", methods=['POST'])
-# @requires_auth('post:musician')
+@requires_auth('post:musician')
 def create_musician_submission():
     genresList = request.form.getlist("genres")
     musicianData = MusicianForm(request.form)
