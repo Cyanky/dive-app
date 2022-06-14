@@ -31,7 +31,7 @@ from werkzeug.utils import secure_filename
 import time
 import base64
 
-from auth import AuthError, requires_auth, get_token_auth_header
+from auth import AuthError, requires_auth
 
 # from flask_migrate import Migrate
 # migrate = Migrate()
@@ -240,13 +240,13 @@ def show_musician(musician_id):
 
 @app.route('/musicians/create', methods=['GET'])
 @requires_auth('get:musician-create-page')
-def create_musician_form(payload):
+def create_musician_form(jwt):
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
 
 @app.route("/musicians/create", methods=['POST'])
 @requires_auth('post:musician')
-def create_musician_submission(payload):
+def create_musician_submission(jwt):
     genresList = request.form.getlist("genres")
     musicianData = MusicianForm(request.form)
     
