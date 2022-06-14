@@ -58,8 +58,8 @@ from auth import AuthError, requires_auth, get_token_auth_header
 #         return uniqueNum
 
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sawzrcjjllmcwb:3275998379c87b87f6d3899cbac4b767f229a56a233624fef970bc8f532ff732@ec2-52-72-99-110.compute-1.amazonaws.com:5432/db2gbfccp2e5u0'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:abc@localhost:5432/diveapp'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sawzrcjjllmcwb:3275998379c87b87f6d3899cbac4b767f229a56a233624fef970bc8f532ff732@ec2-52-72-99-110.compute-1.amazonaws.com:5432/db2gbfccp2e5u0'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:abc@localhost:5432/diveapp'
 app.config.from_object('config')
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -239,13 +239,13 @@ def show_musician(musician_id):
 # ------------------------------------------------------------
 
 @app.route('/musicians/create', methods=['GET'])
-@requires_auth('get:musician-create-page')
+# @requires_auth('get:musician-create-page')
 def create_musician_form():
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
 
 @app.route("/musicians/create", methods=['POST'])
-@requires_auth('post:musician')
+# @requires_auth('post:musician')
 def create_musician_submission():
     genresList = request.form.getlist("genres")
     musicianData = MusicianForm(request.form)
@@ -346,13 +346,13 @@ def songs():
 # ------------------------------------------------------------
 
 @app.route('/songs/create', methods=['GET'])
-@requires_auth('get:song-create-page')
+# @requires_auth('get:song-create-page')
 def create_song_form():
     form = SongForm()
     return render_template("forms/new_song.html", form=form)
 
 @app.route("/songs/create", methods=['POST'])
-@requires_auth('post:song')
+# @requires_auth('post:song')
 def create_song_submission():
     genresList = request.form.getlist("genres")
     songData = SongForm(request.form)
@@ -475,7 +475,7 @@ def edit_musician(musician_id):
 
 
 @app.route("/musicians/<int:musician_id>/edit", methods=["POST"])
-@requires_auth('post:edit-musician')
+# @requires_auth('post:edit-musician')
 def edit_musician_submission(musician_id):
     # Done: take values from the form submitted, and update existing
     # artist record with ID <artist_id> using the new attributes
@@ -527,7 +527,7 @@ def edit_song(song_id):
 
 
 @app.route("/songs/<int:song_id>/edit", methods=["POST"])
-@requires_auth('post:edit-song')
+# @requires_auth('post:edit-song')
 def edit_song_submission(song_id):
     # Done: take values from the form submitted, and update existing
     # artist record with ID <artist_id> using the new attributes
