@@ -10,10 +10,10 @@ ALGORITHMS = ['RS256']
 API_AUDIENCE = 'divemusic'
 # AuthError Exception
 
-'''
-AuthError Exception
-A standardized way to communicate auth failure modes
-'''
+# '''
+# AuthError Exception
+# A standardized way to communicate auth failure modes
+# '''
 
 
 class AuthError(Exception):
