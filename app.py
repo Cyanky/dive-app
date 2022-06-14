@@ -58,7 +58,8 @@ from auth import AuthError, requires_auth, get_token_auth_header
 #         return uniqueNum
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sawzrcjjllmcwb:3275998379c87b87f6d3899cbac4b767f229a56a233624fef970bc8f532ff732@ec2-52-72-99-110.compute-1.amazonaws.com:5432/db2gbfccp2e5u0'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sawzrcjjllmcwb:3275998379c87b87f6d3899cbac4b767f229a56a233624fef970bc8f532ff732@ec2-52-72-99-110.compute-1.amazonaws.com:5432/db2gbfccp2e5u0'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:abc@localhost:5432/diveapp'
 app.config.from_object('config')
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
