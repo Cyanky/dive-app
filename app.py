@@ -238,6 +238,7 @@ def show_musician(musician_id):
 # ------------------------------------------------------------
 
 @app.route('/musicians/create', methods=['GET'])
+@requires_auth('get:musician-create-page')
 def create_musician_form():
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
@@ -344,6 +345,7 @@ def songs():
 # ------------------------------------------------------------
 
 @app.route('/songs/create', methods=['GET'])
+@requires_auth('get:song-create-page')
 def create_song_form():
     form = SongForm()
     return render_template("forms/new_song.html", form=form)
