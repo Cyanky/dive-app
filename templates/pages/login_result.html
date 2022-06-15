@@ -57,26 +57,30 @@
         </div>
     </section>
     <script>
-        var url = window.location.herf;
+        var url = window.location;
 
-        var access_token;
+        var access_token = new URLSearchParams(url.search).get('access_token');
+        console.log(access_token)
+        // var url = window.location.herf;
+
+        // var access_token;
         
-        var Request = new Object();
+        // var Request = new Object();
         
         
-        var str = url.substr(1);
+        // var str = url.substr(1);
     
-        strs= str.split("&");
+        // strs= str.split("&");
     
-        for(var i=0;i<strs.length;i++)
+        // for(var i=0;i<strs.length;i++)
     
-        {
-            Request[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
-        }
+        // {
+        //     Request[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+        // }
     
     
         
-        access_token = Request["access_token"]; 
+        // access_token = Request["access_token"]; 
         // var test = window.location.herf;
         
         // var url = new URL(test.replace('#', ''))    
