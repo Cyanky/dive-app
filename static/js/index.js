@@ -59,8 +59,8 @@ hamburgerMenu.addEventListener('click', function () {
 
 
 var url=location.search;
-var new_url = url.replace('#', '')
-console.log(new_url) 
+var new_url = url.replace('#', '');
+console.log('123');
  
 // var ename;
  

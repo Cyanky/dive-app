@@ -35,7 +35,7 @@ import time
 import base64
 
 
-from auth import AuthError, requires_auth
+# from auth import AuthError, requires_auth
 
 # from flask_migrate import Migrate
 # migrate = Migrate()
@@ -69,18 +69,20 @@ app.config.from_object('config')
 # app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-CORS(app)
+# CORS(app)
 
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization, true')
-    response.headers.add('Access-COntrol-Allow-Methods', 'GET, POST')
-    return response
+# @app.after_request
+# def after_request(response):
+#     response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization, true')
+#     response.headers.add('Access-COntrol-Allow-Methods', 'GET, POST')
+#     return response
 # def create_app(test_config=None):
 
 #     app = Flask(__name__)
 #     setup_db(app)
 #     CORS(app)
+
+
 
 # ------------------------------------------------------------------------------#
 # Data Model
@@ -175,6 +177,11 @@ class Song(db.Model):
 def index():
     return render_template('pages/home.html')
 
+@app.route('/login-result')
+def login_result():
+    return render_template('pages/login_result_.html')
+    
+
 #  Musicians
 # ------------------------------------------------------------
 
@@ -249,13 +256,13 @@ def show_musician(musician_id):
 # ------------------------------------------------------------
 
 @app.route('/musicians/create', methods=['GET'])
-@requires_auth('get:musician-create-page')
+# @requires_auth('get:musician-create-page')
 def create_musician_form(payload):
     form = MusicianForm()
     return render_template("forms/new_musician.html", form=form)
 
 @app.route("/musicians/create", methods=['POST'])
-@requires_auth('post:musician')
+# @requires_auth('post:musician')
 def create_musician_submission(payload):
     genresList = request.form.getlist("genres")
     musicianData = MusicianForm(request.form)
