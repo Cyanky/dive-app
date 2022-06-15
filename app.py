@@ -179,7 +179,7 @@ def index():
 
 @app.route('/login-result')
 def login_result():
-    return render_template('pages/login_result_.html')
+    return render_template('pages/login_result.html')
     
 
 #  Musicians
