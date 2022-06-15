@@ -58,7 +58,10 @@
     </section>
     <script>
         var test = window.location.hash;
-        alert(test);
+        var url = new URL(test.replace('#', ''))    
+        console.log(url.searchParams.get('token'))
+
+        // alert(test);
 
     </script>
 </body>
