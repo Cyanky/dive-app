@@ -11,19 +11,54 @@
     <link rel="stylesheet" href="/static/css/mainpage.css">
 </head>
 
-<section class="searching">
-    <div class="container">
+<body>
+    <!-- Header start -->
+    <header class="header">
+        <!--Control the overall width of the content-->
+        <div class="container">
+            <nav class="nav">
+                <a href="/templates/layouts/main.html" class="logo">
+                    <img src="{{ url_for('static', filename = 'logo.png') }}" alt="">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="/templates/pages/about.html" class="nav-link">About</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="/search" class="nav-link">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/songs" class="nav-link">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/musicians" class="nav-link">Musicians</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="searching">
+        <div class="container">
+            
+            
+                <div class="input-group">
+                    <label for="adults" class="input-label">You've successfully logged in !</label>
+                    
+                </div>
         
-           
-            <div class="input-group">
-                <label for="adults" class="input-label">You've successfully logged in !</label>
-                
-            </div>
-     
-    </div>
-</section>
-<script>
-    var url=location.search;
-    var new_url = url.replace('#', '');
-    console.log(url);
-</script>
+        </div>
+    </section>
+    <script>
+        var url=location.search;
+        var new_url = url.replace('#', '');
+        console.log(new_url);
+    </script>
+</body>
