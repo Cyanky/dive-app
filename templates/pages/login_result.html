@@ -63,21 +63,18 @@
         
         var Request = new Object();
         
-        if(url.indexOf("#")!=-1)
         
+        var str = url.substr(1);
+    
+        strs= str.split("&");
+    
+        for(var i=0;i<strs.length;i++)
+    
         {
-        
-            var str = url.substr(1);
-        
-            strs= str.split("&");
-        
-            for(var i=0;i<strs.length;i++)
-        
-            {
-                Request[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
-            }
-        
+            Request[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
         }
+    
+    
         
         access_token = Request["access_token"]; 
         // var test = window.location.herf;
