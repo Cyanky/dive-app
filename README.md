@@ -1,6 +1,7 @@
 # Dive
 A musicial web app to help musicians upload their information and let listeners find specific songs and musicians.
-*** This app has been deployed to Heroku, check this url: https://dive-app.herokuapp.com/
+  
+  *** This app has been deployed to Heroku, check this url: https://dive-app.herokuapp.com/
 # Overview  
 ## Tech Stack
 Tech stack includes:
