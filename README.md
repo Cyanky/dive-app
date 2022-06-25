@@ -10,7 +10,7 @@ Tech stack includes:
 - PostgreSQL as my database of choice.
 - Python3 and Flask as my server-side language and server-side framework.
 - Flask-Migrate for creating and running schema migrations.
-- HTML, CSS, and Javascript with Bootstrap 3 for the website's frontend.
+- HTML, CSS, and Javascript for the website's frontend.
 
 ## Main Files: Project Structure
 ```
