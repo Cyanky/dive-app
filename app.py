@@ -62,7 +62,7 @@ import base64
 #         return uniqueNum
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sawzrcjjllmcwb:3275998379c87b87f6d3899cbac4b767f229a56a233624fef970bc8f532ff732@ec2-52-72-99-110.compute-1.amazonaws.com:5432/db2gbfccp2e5u0'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres_deployment_example_h900_user:ReAKzvxGHirxqHg4x0BuuzasnjBqg4V8@dpg-cfs5b3pmbjshr9mop7h0-a/postgres_deployment_example_h900'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:abc@localhost:5432/diveapp'
 app.config.from_object('config')
 # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
